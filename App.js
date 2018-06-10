@@ -2,6 +2,7 @@ import React from 'react'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 
+// GraphQLクエリ
 const query = gql`
 query ($author: String!){
 	books(author: $author) {
@@ -11,6 +12,7 @@ query ($author: String!){
 }
 `
 
+// HOC
 const graphQL = (param) => (WrappedComponent) => (props) => (
   <Query
     query={query}
